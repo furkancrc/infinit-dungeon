@@ -4,16 +4,15 @@ namespace InfiniteDungeon.Items
 {
     public abstract class Item
     {
-        public string Name;
-        private string Kind;
-        public int Price;
-
+        public string name;
+        private string kind;
+        public int price;
 
         protected Item(string name, string kind, int price)
         {
-            this.Name = name;
-            this.Kind = kind;
-            this.Price = price;
+            this.name = name;
+            this.kind = kind;
+            this.price = price;
         }
     }
 }
