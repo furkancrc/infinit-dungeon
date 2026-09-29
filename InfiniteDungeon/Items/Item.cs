@@ -1,29 +1,19 @@
-public class Item
+using InfiniteDungeon.Entity;
+
+namespace InfiniteDungeon.Items
 {
-    private string name;
-    private string type;
-    private int price;
-    private int damage;
-
-    public Item(string name, string type, int price, int damage)
+    public abstract class Item
     {
-        this.name = name;
-        this.type = type;
-        this.price = price;
-        this.damage = damage;
-    }
+        public string Name;
+        private string Kind;
+        public int Price;
 
-    public void UsePlayer(Player player)
-    {
-        switch (Type)
+
+        protected Item(string name, string kind, int price)
         {
-            case "potion":
-                player.Health += Damage;
-                Console.WriteLine($"+{Damage} PV");
-                break;
-
-            default:
-                Console.WriteLine("Cet objet ne peut pas être utilisé.");
-                break;
+            this.Name = name;
+            this.Kind = kind;
+            this.Price = price;
         }
     }
+}
