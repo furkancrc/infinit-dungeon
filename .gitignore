@@ -1,6 +1,8 @@
 bin/
 obj/
 
+.vs/
+InfiniteDungeon/.vs/
 vs/
 *.user
 *.userosscache
