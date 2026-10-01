@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="TBrNPp7gSNsO3hZTC1YH">
+    <mxGraphModel dx="2488" dy="1902" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="game" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Game" vertex="1">
+          <mxGeometry height="214" width="260" x="55" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="game-a" parent="game" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- player : Player&lt;br&gt;- currentRoom : Room&lt;br&gt;- roomCount : int" vertex="1">
+          <mxGeometry height="70" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="game-s" parent="game" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="game-m" parent="game" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ StartGame() : void&lt;br&gt;+ GameLoop() : void&lt;br&gt;+ NextRoom() : void&lt;br&gt;+ OpenShop(merchant : Merchant) : void&lt;br&gt;+ GameOver() : void&lt;div&gt;+ ChooseDoor() : void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="260" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="room" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Room" vertex="1">
+          <mxGeometry height="214" width="260" x="400" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="room-a" parent="room" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- enemy : Enemy&lt;br&gt;- merchant : Merchant&lt;div&gt;- door : bool[]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="room-s" parent="room" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="136" as="geometry" />
+        </mxCell>
+        <mxCell id="room-m" parent="room" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Display() : void&lt;br&gt;+ Generate() : void" vertex="1">
+          <mxGeometry height="70" width="260" y="144" as="geometry" />
+        </mxCell>
+        <mxCell id="merchant" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Merchant" vertex="1">
+          <mxGeometry height="154" width="300" x="820" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="merchant-a" parent="merchant" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- name : string&lt;br&gt;- inventory : List&amp;lt;Item&amp;gt;" vertex="1">
+          <mxGeometry height="50" width="300" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="merchant-s" parent="merchant" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="300" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="merchant-m" parent="merchant" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Sell(item : Item, player : Player) : bool&lt;br&gt;+ Buy(item : Item, player : Player) : bool&lt;br&gt;+ ShowInventory() : void" vertex="1">
+          <mxGeometry height="70" width="300" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="player" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Player" vertex="1">
+          <mxGeometry height="194" width="290" x="40" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="player-a" parent="player" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- inventory : List&amp;lt;Item&amp;gt;&lt;br&gt;- money : int" vertex="1">
+          <mxGeometry height="50" width="290" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="player-s" parent="player" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="290" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="player-m" parent="player" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Attack(target : Character) : void&lt;br&gt;+ UseItem(item : Item) : void&lt;br&gt;+ AddItem(item : Item) : void&lt;br&gt;+ RemoveItem(item : Item) : void&lt;br&gt;+ AddMoney(amount : int) : void&lt;br&gt;+ SpendMoney(amount : int) : bool" vertex="1">
+          <mxGeometry height="110" width="290" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Enemy" vertex="1">
+          <mxGeometry height="134" width="280" x="760" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy-a" parent="enemy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- damage : int&lt;br&gt;- inventory : List&amp;lt;Item&amp;gt;" vertex="1">
+          <mxGeometry height="50" width="280" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy-s" parent="enemy" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="280" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="enemy-m" parent="enemy" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Attack(target : Character) : void&lt;br&gt;+ DropLoot() : List&amp;lt;Item&amp;gt;" vertex="1">
+          <mxGeometry height="50" width="280" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="item" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Item" vertex="1">
+          <mxGeometry height="154" width="240" x="420" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="item-a" parent="item" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- name : string&lt;br&gt;- type : string&lt;br&gt;- price : int&lt;br&gt;- damage : int" vertex="1">
+          <mxGeometry height="90" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="item-s" parent="item" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="240" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="item-m" parent="item" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Use(player : Player) : void" vertex="1">
+          <mxGeometry height="30" width="240" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="e-game-player" edge="1" parent="1" source="game" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;" target="player">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-game-room" edge="1" parent="1" source="game" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;" target="room">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-room-merchant" edge="1" parent="1" source="room" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;" target="merchant" value="0..1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-room-enemy" edge="1" parent="1" source="room" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;" target="enemy" value="0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-player-item" edge="1" parent="1" source="player" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;" target="item" value="0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-enemy-item" edge="1" parent="1" source="enemy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;" target="item" value="0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-merchant-item" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;" value="0..*">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1090" y="810" />
+            </Array>
+            <mxPoint x="1090" y="124" as="sourcePoint" />
+            <mxPoint x="660" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
