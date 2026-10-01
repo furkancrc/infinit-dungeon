@@ -1,25 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using InfiniteDungeon.Items;
 
-namespace InfiniteDungeon.Entity
+namespace InfiniteDungeon.Entity;
+
+public class Enemy : Character
 {
-    internal class Enemy
+    private readonly List<Item> inventory;
+
+    public int Damage { get; }
+    public int GoldReward { get; }
+    public int XpReward { get; }
+    public bool IsBoss { get; }
+
+    public Enemy(string name, int health, int damage, int goldReward, int xpReward,
+                 List<Item> loot, bool isBoss = false) : base(name, health)
     {
-
-        private int damage { get; set; }
-
-        private List<Item> inventory { get; set; }
-
-        public void Attack(Player target)
-        {
-            target.getHealth() = (target.getHealth() - this.damage);
-        }
-
-        public List<Item> DropLoot()
-        {
-
-        }
+        Damage = damage;
+        GoldReward = goldReward;
+        XpReward = xpReward;
+        inventory = loot;
+        IsBoss = isBoss;
     }
+
+    public override AttackResult Attack(Character target, Random rng)
+    {
+        int damage = rng.Next(Damage * 8 / 10, Damage * 12 / 10 + 1);
+        int dealt = target.TakeDamage(Math.Max(1, damage));
+        return new AttackResult(dealt, false);
+    }
+
+    public List<Item> DropLoot() => new(inventory);
 }

@@ -1,18 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using InfiniteDungeon.Entity;
 
-namespace InfiniteDungeon.Items
+namespace InfiniteDungeon.Items;
+
+public sealed class HealPotion : Item
 {
-    abstract class HealPotion : Item
-    {
-        private int heal;
-        private String rarete;
+    public int Heal { get; }
 
-        public HealPotion(string name, string kind, int price, int heal, String rarete) : base(name, kind, price)
+    public HealPotion(string name, int price, int heal, Rarity rarity = Rarity.Commun)
+        : base(name, "Potion", price, rarity)
+    {
+        Heal = heal;
+    }
+
+    public override string Description => $"rend {Heal} PV";
+
+    public override bool Use(Player player)
+    {
+        if (player.Health >= player.MaxHealth)
         {
-            this.heal = heal;
-            this.rarete = rarete;
+            Console.WriteLine("Vos PV sont déjà au maximum.");
+            return false;
         }
+
+        int healed = player.Heal(Heal);
+        Console.WriteLine($"Vous récupérez {healed} PV.");
+        return true;
     }
 }
