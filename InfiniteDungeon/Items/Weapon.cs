@@ -1,19 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Linq;
+using InfiniteDungeon.Entity;
 
-namespace InfiniteDungeon.Items
+namespace InfiniteDungeon.Items;
+
+public sealed class Weapon : Item
 {
-    abstract class Weapon : Item
-    {
-        private int damage;
-        private String rarete;
+    public int Damage { get; }
 
-        public Weapon(string name, string kind, int price, int damage, String rarete) : base(name, kind, price)
-        {   
-            this.damage = damage;
-            this.rarete = rarete;
-        }
+    public Weapon(string name, int price, int damage, Rarity rarity = Rarity.Commun)
+        : base(name, "Arme", price, rarity)
+    {
+        Damage = damage;
+    }
+
+    public override string Description => $"+{Damage} dégâts";
+
+    public override bool Use(Player player)
+    {
+        player.Equip(this);
+        Console.WriteLine($"Vous équipez {Name}.");
+        return false;
     }
 }
